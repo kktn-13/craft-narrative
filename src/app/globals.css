@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: #d4c5ad;
+    color: #30251e;
+  }
+}
+
+@layer components {
+  .prose-craft h2 {
+    @apply font-serif text-2xl font-semibold text-ink-900 mb-4;
+  }
+
+  .prose-craft h3 {
+    @apply font-serif text-xl font-medium text-ink-800 mb-3;
+  }
+
+  .prose-craft p {
+    @apply text-ink-600 leading-relaxed mb-4;
+  }
+
+  .prose-craft ul,
+  .prose-craft ol {
+    @apply text-ink-600 leading-relaxed mb-4 pl-5;
+  }
+
+  .prose-craft li {
+    @apply mb-2;
+  }
+}
+
+/* Custom range slider for audio player */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #886a4e;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #886a4e;
+  cursor: pointer;
+  border: none;
+}
