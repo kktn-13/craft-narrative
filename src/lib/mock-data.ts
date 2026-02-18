@@ -92,6 +92,29 @@ export const mockProducts: Product[] = [
     is_published: true,
     created_at: "2025-02-10T00:00:00Z",
   },
+  {
+    id: "prod-004",
+    slug: "edo-kiriko-glass",
+    name: { en: "Edo Kiriko Cut Glass", ja: "江戸切子" },
+    description: {
+      en: "A masterpiece of Edo Kiriko cut glass, handcrafted in Tokyo using techniques originating in 1834. Each piece features intricate geometric patterns carved into layered colored glass, creating a mesmerizing play of light.",
+      ja: "1834年に始まった技法を用い、東京で手作りされた江戸切子の逸品。色被せガラスに精緻な幾何学模様を刻み、光の美しい煌めきを生み出します。",
+    },
+    story_text: {
+      en: "In a small workshop tucked away in Tokyo's Sumida ward, master craftsman Kobayashi-san sits before his grinding wheel, a tool that has been in his family for three generations. Edo Kiriko, the art of cut glass, was born in 1834 when Kagaya Kyubei, a glass merchant in Edo (old Tokyo), began carving patterns into glass using emery powder. 'The glass tells you where to cut,' Kobayashi-san says, his hands moving with a precision born of 35 years of practice. 'One wrong move, one moment of lost concentration, and the piece is ruined.' Each glass passes through over 10 cutting wheels of different sizes, and the final polish reveals patterns that catch light like captured diamonds.",
+      ja: "東京・墨田区の路地裏にある小さな工房で、職人の小林さんは研磨機の前に座ります。三代にわたり受け継がれてきた道具です。江戸切子は1834年、江戸の硝子問屋・加賀屋久兵衛が金剛砂を用いてガラスに模様を彫り始めたことに始まります。「ガラスがどこを切るべきか教えてくれるのです」と小林さんは言います。35年の修行で培われた精密な手さばき。「一瞬の集中の途切れで、作品は台無しになります。」一つのグラスに10種以上の大きさの研磨盤を使い、最後の磨きでダイヤモンドのように光を捉える模様が現れます。",
+    },
+    process_details: {
+      en: "1. Glass Selection — High-quality colored glass (typically ruby red or cobalt blue) layered over clear crystal glass.\n2. Pattern Marking — Design lines drawn on the glass surface with a marking pen as cutting guides.\n3. Rough Cutting — Primary patterns carved using a diamond wheel, establishing the main geometric design.\n4. Medium Cutting — Finer wheels refine the pattern edges and add detail cuts.\n5. Fine Cutting — Precision cuts with small wheels create the intricate inner patterns.\n6. Polishing — Multi-stage polishing with increasingly fine abrasives until the glass achieves mirror-like clarity.",
+      ja: "1. ガラス選び — 高品質な色ガラス（主に赤や青）を透明なクリスタルガラスに被せた「色被せガラス」を使用。\n2. 割り出し — カットの目安となる線をガラス表面にペンで描きます。\n3. 荒摺り — ダイヤモンドホイールで主要な幾何学模様の大まかなカットを施します。\n4. 中摺り — より細かいホイールで模様の輪郭を整え、ディテールを加えます。\n5. 仕上げ摺り — 小さなホイールで精緻な内側の模様を刻みます。\n6. 磨き — 段階的に細かい研磨剤で磨き上げ、鏡のような透明感を実現します。",
+    },
+    price_wholesale: 15000,
+    price_retail_ref: 35000,
+    moq: 2,
+    origin_region: { en: "Tokyo, Japan", ja: "東京" },
+    is_published: true,
+    created_at: "2025-02-15T00:00:00Z",
+  },
 ];
 
 export const mockMediaAssets: MediaAsset[] = [
@@ -188,6 +211,16 @@ export const mockMediaAssets: MediaAsset[] = [
     url: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800",
     thumbnail_url:
       "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400",
+    is_public_asset: true,
+    creator_credit_id: null,
+  },
+  // Edo Kiriko media
+  {
+    id: "media-011",
+    product_id: "prod-004",
+    type: "video_hero",
+    url: "/videos/edo-kiriko-hero.mov",
+    thumbnail_url: "",
     is_public_asset: true,
     creator_credit_id: null,
   },
