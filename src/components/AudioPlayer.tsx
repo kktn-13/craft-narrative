@@ -48,8 +48,8 @@ export default function AudioPlayer({ audioUrl }: Props) {
   };
 
   return (
-    <div className="bg-craft-50 border border-craft-200 rounded-lg p-4">
-      <p className="text-sm font-medium text-craft-800 mb-3">
+    <div className="bg-navy-800 border border-navy-700 rounded p-4">
+      <p className="text-sm font-medium text-gold-400 mb-3 tracking-wide">
         {t("listenStory")}
       </p>
       <audio
@@ -62,7 +62,7 @@ export default function AudioPlayer({ audioUrl }: Props) {
       <div className="flex items-center gap-3">
         <button
           onClick={togglePlay}
-          className="w-10 h-10 flex items-center justify-center rounded-full bg-craft-700 text-white hover:bg-craft-800 transition-colors flex-shrink-0"
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-gold-500 text-navy-950 hover:bg-gold-400 transition-colors flex-shrink-0"
         >
           {isPlaying ? (
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -82,9 +82,9 @@ export default function AudioPlayer({ audioUrl }: Props) {
             max={duration || 0}
             value={progress}
             onChange={handleSeek}
-            className="w-full h-1.5 bg-craft-200 rounded-full appearance-none cursor-pointer accent-craft-700"
+            className="w-full h-1.5 bg-navy-600 rounded-full appearance-none cursor-pointer"
           />
-          <div className="flex justify-between text-xs text-ink-400 mt-1">
+          <div className="flex justify-between text-xs text-parchment-400 mt-1">
             <span>{formatTime(progress)}</span>
             <span>{formatTime(duration)}</span>
           </div>

@@ -12,7 +12,7 @@ export const mockProfiles: Profile[] = [
   {
     id: "admin-001",
     role: "admin",
-    company_name: "CraftNarrative Inc.",
+    company_name: "Kairo Inc.",
     country: "JP",
     preferred_language: "ja",
     created_at: "2025-01-01T00:00:00Z",

@@ -15,13 +15,13 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex items-center gap-1 bg-craft-100 rounded-full p-0.5">
+    <div className="flex items-center gap-1 bg-navy-700 rounded-full p-0.5">
       <button
         onClick={() => switchLocale("en")}
         className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
           locale === "en"
-            ? "bg-craft-700 text-white"
-            : "text-craft-700 hover:bg-craft-200"
+            ? "bg-gold-500 text-navy-950"
+            : "text-parchment-300 hover:text-gold-400"
         }`}
       >
         EN
@@ -30,8 +30,8 @@ export default function LanguageSwitcher() {
         onClick={() => switchLocale("ja")}
         className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
           locale === "ja"
-            ? "bg-craft-700 text-white"
-            : "text-craft-700 hover:bg-craft-200"
+            ? "bg-gold-500 text-navy-950"
+            : "text-parchment-300 hover:text-gold-400"
         }`}
       >
         JA

@@ -52,7 +52,7 @@ export default function DashboardPage() {
             <Link
               key={order.id}
               href={`/${locale}/dashboard/orders/${order.id}`}
-              className="block bg-white border border-craft-200 rounded-lg p-6 hover:shadow-md transition-shadow"
+              className="block bg-white border border-parchment-300 rounded p-6 hover:shadow-gold-glow hover:border-gold-300 transition-all"
             >
               <div className="flex items-center justify-between mb-3">
                 <span className="text-sm font-mono text-ink-400">
@@ -73,7 +73,7 @@ export default function DashboardPage() {
                 ))}
               </div>
               <div className="mt-3 flex items-center justify-between">
-                <span className="text-lg font-semibold text-craft-800">
+                <span className="text-lg font-semibold text-gold-700">
                   {formatPrice(order.total_amount)}
                 </span>
                 <span className="text-xs text-ink-400">

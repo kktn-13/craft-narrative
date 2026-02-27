@@ -44,9 +44,7 @@ export default function AdminOrdersPage() {
     if (!editingId) return;
     setOrders((prev) =>
       prev.map((o) =>
-        o.id === editingId
-          ? { ...o, carrier, tracking_number: trackingNumber, status }
-          : o
+        o.id === editingId ? { ...o, carrier, tracking_number: trackingNumber, status } : o
       )
     );
     setSuccessMsg(t("updated"));
@@ -62,94 +60,73 @@ export default function AdminOrdersPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="font-serif text-3xl font-semibold mb-2">{t("title")}</h1>
-      <h2 className="text-ink-500 mb-8">{t("manageOrders")}</h2>
+      <h1 className="font-serif text-3xl font-semibold text-navy-800 mb-2">{t("title")}</h1>
+      <p className="text-ink-500 mb-8">{t("manageOrders")}</p>
 
       {successMsg && (
-        <div className="mb-6 bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-md text-sm">
+        <div className="mb-6 bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded text-sm">
           {successMsg}
         </div>
       )}
 
       <div className="space-y-6">
         {orders.map((order) => (
-          <div
-            key={order.id}
-            className="bg-white border border-craft-200 rounded-lg overflow-hidden"
-          >
+          <div key={order.id} className="bg-white border border-parchment-300 rounded overflow-hidden">
             <div className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <div>
-                  <span className="text-sm font-mono text-ink-400">
-                    {order.id}
-                  </span>
-                  <span className="ml-3 text-sm text-ink-500">
-                    Buyer: {order.buyer_id}
-                  </span>
+                  <span className="text-sm font-mono text-ink-400">{order.id}</span>
+                  <span className="ml-3 text-sm text-ink-500">Buyer: {order.buyer_id}</span>
                 </div>
-                <span className="text-lg font-semibold text-craft-800">
+                <span className="text-lg font-semibold text-gold-600">
                   {formatPrice(order.total_amount)}
                 </span>
               </div>
 
-              {/* Items */}
               <div className="mb-4 text-sm text-ink-600">
                 {order.items.map((item) => (
                   <span key={item.product_id} className="mr-4">
-                    {getLocalizedField(item.product_name, locale)} x{" "}
-                    {item.quantity}
+                    {getLocalizedField(item.product_name, locale)} x {item.quantity}
                   </span>
                 ))}
               </div>
 
-              {/* Timeline */}
               <OrderTimeline
                 currentStatus={order.status}
                 trackingNumber={order.tracking_number}
                 carrier={order.carrier}
               />
 
-              {/* Edit Section */}
               {editingId === order.id ? (
-                <div className="mt-6 bg-craft-50 border border-craft-200 rounded-lg p-4">
-                  <h3 className="font-medium text-ink-700 mb-4">
-                    {t("updateShipping")}
-                  </h3>
+                <div className="mt-6 bg-parchment-100 border border-parchment-300 rounded p-4">
+                  <h3 className="font-medium text-navy-700 mb-4">{t("updateShipping")}</h3>
                   <div className="grid sm:grid-cols-3 gap-4">
                     <div>
-                      <label className="block text-sm text-ink-500 mb-1">
-                        {t("carrierLabel")}
-                      </label>
+                      <label className="block text-sm text-ink-500 mb-1">{t("carrierLabel")}</label>
                       <input
                         type="text"
                         value={carrier}
                         onChange={(e) => setCarrier(e.target.value)}
                         placeholder="Japan Post EMS"
-                        className="w-full px-3 py-2 border border-craft-200 rounded-md text-sm focus:ring-2 focus:ring-craft-300 focus:border-craft-400 outline-none"
+                        className="w-full px-3 py-2 border border-parchment-300 rounded text-sm focus:ring-2 focus:ring-gold-300 focus:border-gold-400 outline-none"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-ink-500 mb-1">
-                        {t("trackingLabel")}
-                      </label>
+                      <label className="block text-sm text-ink-500 mb-1">{t("trackingLabel")}</label>
                       <input
                         type="text"
                         value={trackingNumber}
                         onChange={(e) => setTrackingNumber(e.target.value)}
                         placeholder="JP123456789"
-                        className="w-full px-3 py-2 border border-craft-200 rounded-md text-sm focus:ring-2 focus:ring-craft-300 focus:border-craft-400 outline-none"
+                        className="w-full px-3 py-2 border border-parchment-300 rounded text-sm focus:ring-2 focus:ring-gold-300 focus:border-gold-400 outline-none"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-ink-500 mb-1">
-                        {t("statusLabel")}
-                      </label>
+                      <label className="block text-sm text-ink-500 mb-1">{t("statusLabel")}</label>
                       <select
                         value={status}
-                        onChange={(e) =>
-                          setStatus(e.target.value as OrderStatus)
-                        }
-                        className="w-full px-3 py-2 border border-craft-200 rounded-md text-sm focus:ring-2 focus:ring-craft-300 focus:border-craft-400 outline-none"
+                        onChange={(e) => setStatus(e.target.value as OrderStatus)}
+                        className="w-full px-3 py-2 border border-parchment-300 rounded text-sm focus:ring-2 focus:ring-gold-300 focus:border-gold-400 outline-none"
                       >
                         <option value="pending">{ts("pending")}</option>
                         <option value="paid">{ts("paid")}</option>
@@ -161,13 +138,13 @@ export default function AdminOrdersPage() {
                   <div className="mt-4 flex gap-2">
                     <button
                       onClick={saveEdit}
-                      className="px-4 py-2 text-sm bg-craft-700 text-white rounded-md hover:bg-craft-800 transition-colors"
+                      className="px-4 py-2 text-sm bg-gold-500 text-navy-950 font-semibold rounded hover:bg-gold-400 transition-colors"
                     >
                       {t("update")}
                     </button>
                     <button
                       onClick={() => setEditingId(null)}
-                      className="px-4 py-2 text-sm border border-craft-300 text-craft-700 rounded-md hover:bg-craft-50 transition-colors"
+                      className="px-4 py-2 text-sm border border-parchment-400 text-ink-600 rounded hover:bg-parchment-100 transition-colors"
                     >
                       {tc("cancel")}
                     </button>
@@ -176,7 +153,7 @@ export default function AdminOrdersPage() {
               ) : (
                 <button
                   onClick={() => startEdit(order.id)}
-                  className="mt-4 px-4 py-2 text-sm border border-craft-300 text-craft-700 rounded-md hover:bg-craft-50 transition-colors"
+                  className="mt-4 px-4 py-2 text-sm border border-gold-400 text-gold-600 rounded hover:bg-gold-50 transition-colors"
                 >
                   {t("updateShipping")}
                 </button>

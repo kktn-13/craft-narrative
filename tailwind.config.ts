@@ -9,21 +9,51 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        craft: {
-          50: "#faf8f5",
-          100: "#f3efe8",
-          200: "#e6ddd0",
-          300: "#d4c5ad",
-          400: "#bfa887",
-          500: "#b0926b",
-          600: "#a3815d",
-          700: "#886a4e",
-          800: "#6f5744",
-          900: "#5b483a",
-          950: "#30251e",
+        // Gold — primary accent (#b8962e base)
+        gold: {
+          50:  "#fdf9ee",
+          100: "#f8f0d0",
+          200: "#f0dfa0",
+          300: "#e6c865",
+          400: "#d9ae3a",
+          500: "#b8962e",
+          600: "#9a7a22",
+          700: "#7c601c",
+          800: "#5e491a",
+          900: "#3e3013",
+          950: "#1f180a",
         },
+        // Navy — primary background/text (#0f1f3d base)
+        navy: {
+          50:  "#eef2fa",
+          100: "#d5def4",
+          200: "#aabde9",
+          300: "#7a96d8",
+          400: "#4d6fc3",
+          500: "#2e4fa8",
+          600: "#1e3a8a",
+          700: "#162d6e",
+          800: "#0f1f3d",
+          900: "#091429",
+          950: "#040a17",
+        },
+        // Parchment — warm off-white backgrounds
+        parchment: {
+          50:  "#fefdfb",
+          100: "#f8f4ec",
+          200: "#f0e8d4",
+          300: "#e4d5b5",
+          400: "#d4bc8e",
+          500: "#c0a06a",
+          600: "#a0804a",
+          700: "#7d6038",
+          800: "#5a4428",
+          900: "#382b19",
+          950: "#1c160d",
+        },
+        // Ink — neutral text
         ink: {
-          50: "#f6f6f6",
+          50:  "#f6f6f6",
           100: "#e7e7e7",
           200: "#d1d1d1",
           300: "#b0b0b0",
@@ -38,7 +68,10 @@ const config: Config = {
       },
       fontFamily: {
         serif: ["'Noto Serif JP'", "Georgia", "serif"],
-        sans: ["'Noto Sans JP'", "system-ui", "sans-serif"],
+        sans:  ["'Noto Sans JP'", "system-ui", "sans-serif"],
+      },
+      boxShadow: {
+        "gold-glow": "0 0 20px rgba(184,150,46,0.25)",
       },
     },
   },
